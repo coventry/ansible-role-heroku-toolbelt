@@ -1,38 +1,47 @@
-Role Name
-=========
+# Ansible Role: Heroku Toolbelt
 
-A brief description of the role goes here.
+[![Travis
+CI](http://img.shields.io/travis/pablocrivella/ansible-role-heroku-toolbelt.svg?style=flat)](http://travis-ci.org/pablocrivella/ansible-role-heroku-toolbelt)
+[![test-suite](http://img.shields.io/badge/ansible--roles--specs-ansible--role--rbenv-blue.svg?style=flat)](https://github.com/pablocrivella/ansible-roles-specs/tree/master/ansible-role-heroku-toolbelt/)
+[![Ansible
+Galaxy](http://img.shields.io/badge/galaxy-pablocrivella.heroku-toolbelt-660198.svg?style=flat)](https://galaxy.ansible.com/list#/roles/3123)
 
-Requirements
-------------
+Role to install rbenv and multiple ruby versions.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+Tested with Ansible 1.8.4.
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Role Variables
 
-Dependencies
-------------
+```yaml
+---
+heroku_toolbelt_users:
+  - name: vagrant
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+heroku_toolbelt_plugins:
+  - git://github.com/heroku/heroku-pg-extras.git
+  - git://github.com/heroku/manager-cli.git
+  - git://github.com/ddollar/heroku-config.git
+  - git://github.com/ddollar/heroku-accounts.git
+```
 
-Example Playbook
-----------------
+## Dependencies
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+None
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+## Example Playbook
 
-License
--------
+```yaml
+- hosts: ruby-devbox
+  roles:
+    - pablocrivella.heroku-toolbelt
+```
 
-BSD
+## License
 
-Author Information
-------------------
+MIT
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+## Author Information
+
+Pablo Crivella Backend Engineer @ NobelBiz.
