@@ -1,3 +1,7 @@
+## v1.0.3
+
+- Remove heroku/manager-cli plugin.
+
 ## v1.0.2
 
 - Update README.
