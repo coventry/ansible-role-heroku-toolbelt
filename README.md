@@ -21,7 +21,6 @@ heroku_toolbelt_users:
 
 heroku_toolbelt_plugins:
   - git://github.com/heroku/heroku-pg-extras.git
-  - git://github.com/heroku/manager-cli.git
   - git://github.com/ddollar/heroku-config.git
   - git://github.com/ddollar/heroku-accounts.git
 ```
