@@ -17,4 +17,4 @@
     - heroku_toolbelt_users
     - heroku_toolbelt_plugins
   sudo: true
-  sudo_user: "{{ item[0].name }}"
+  sudo_user: "{{ item[0] }}"
