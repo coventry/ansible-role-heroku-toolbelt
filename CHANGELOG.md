@@ -1,3 +1,9 @@
+## v2.0.0
+
+BREAKING CHANGES:
+
+- Convert heroku_toolbelt_users to a list of strings.
+
 ## v1.0.3
 
 - Remove heroku/manager-cli plugin.
