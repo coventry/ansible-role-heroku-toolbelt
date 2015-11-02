@@ -1,4 +1,9 @@
 ---
+- name: check whether heroku-toolbelt is installed
+  command: dpkg -s heroku-toolbelt
+  ignore_errors: true
+  register: heroku_check
+
 - name: install heroku apt key
   apt_key: url='https://toolbelt.heroku.com/apt/release.key' state=present validate_certs=no
 
