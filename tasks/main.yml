@@ -1,6 +1,6 @@
 ---
 - name: install heroku apt key
-  apt_key: url='https://toolbelt.heroku.com/apt/release.key' state=present
+  apt_key: url='https://toolbelt.heroku.com/apt/release.key' state=present validate_certs=no
 
 - name: install heroku apt repo
   apt_repository: >
