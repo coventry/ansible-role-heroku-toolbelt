@@ -5,14 +5,23 @@
   register: heroku_check
 
 - name: install heroku apt key
-  apt_key: url='https://toolbelt.heroku.com/apt/release.key' state=present validate_certs=no
+  apt_key: 
+    url: 'https://toolbelt.heroku.com/apt/release.key' 
+    state: present 
+    validate_certs: no 
+    state: present
+  when: heroku_check|failed
+  sudo: true
 
 - name: install heroku apt repo
   apt_repository: >
     repo='deb http://toolbelt.heroku.com/ubuntu ./'
     state=present
     update_cache=yes
+  when: heroku_check|failed
+  sudo: true
 
 - name: install heroku-toolbelt
   apt: name=heroku-toolbelt state=present
+  when: heroku_check|failed
   sudo: true
