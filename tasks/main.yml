@@ -15,11 +15,4 @@
 
 - name: install heroku-toolbelt
   apt: name=heroku-toolbelt state=present
-
-- name: install plugins
-  shell: bash -lc "heroku plugins:install {{ item[1] }}"
-  with_nested:
-    - heroku_toolbelt_users
-    - heroku_toolbelt_plugins
   sudo: true
-  sudo_user: "{{ item[0] }}"
