@@ -8,7 +8,7 @@
   apt_key: 
     url: 'https://toolbelt.heroku.com/apt/release.key' 
     state: present 
-    validate_certs: no 
+    validate_certs: yes
     state: present
   when: heroku_check|failed
   sudo: true
